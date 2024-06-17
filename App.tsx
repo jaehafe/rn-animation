@@ -23,6 +23,7 @@ import {
   Directions,
   State,
   Gesture,
+  GestureDetector,
 } from 'react-native-gesture-handler';
 
 const {width} = Dimensions.get('screen');
@@ -149,39 +150,37 @@ export default function App() {
       const newData = [...data, ...data];
       setData(newData);
     }
-  });
+  }, [index, data]);
 
   React.useEffect(() => {
     Animated.spring(scrollXAnimated, {
       toValue: scrollXIndex,
       useNativeDriver: true,
     }).start();
-  });
+  }, [scrollXAnimated, scrollXIndex]);
+
+  const leftFling = Gesture.Fling()
+    .direction(Directions.LEFT)
+    .onEnd(() => {
+      if (index === data.length - 1) {
+        return;
+      }
+      setActiveIndex(index + 1);
+    });
+
+  const rightFling = Gesture.Fling()
+    .direction(Directions.RIGHT)
+    .onEnd(() => {
+      if (index === 0) {
+        return;
+      }
+      setActiveIndex(index - 1);
+    });
 
   return (
     <GestureHandlerRootView>
-      <FlingGestureHandler
-        key="left"
-        direction={Directions.LEFT}
-        onHandlerStateChange={ev => {
-          if (ev.nativeEvent.state === State.END) {
-            if (index === data.length - 1) {
-              return;
-            }
-            setActiveIndex(index + 1);
-          }
-        }}>
-        <FlingGestureHandler
-          key="right"
-          direction={Directions.RIGHT}
-          onHandlerStateChange={ev => {
-            if (ev.nativeEvent.state === State.END) {
-              if (index === 0) {
-                return;
-              }
-              setActiveIndex(index - 1);
-            }
-          }}>
+      <GestureDetector gesture={leftFling}>
+        <GestureDetector gesture={rightFling}>
           <SafeAreaView style={styles.container}>
             <StatusBar hidden />
             <OverflowItems data={data} scrollXAnimated={scrollXAnimated} />
@@ -253,8 +252,8 @@ export default function App() {
               }}
             />
           </SafeAreaView>
-        </FlingGestureHandler>
-      </FlingGestureHandler>
+        </GestureDetector>
+      </GestureDetector>
     </GestureHandlerRootView>
   );
 }
