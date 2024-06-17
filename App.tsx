@@ -1,13 +1,14 @@
 import {SafeAreaView, Text, View} from 'react-native';
 import React from 'react';
 import AnimatedComponents from './src/chapter2/AnimatedComponents';
+import AnimatedValue from './src/chapter2/AnimatedValue';
 
 export default function App() {
   return (
     <SafeAreaView>
       <View>
-        <Text>App</Text>
-        <AnimatedComponents />
+        {/* <AnimatedComponents /> */}
+        <AnimatedValue />
       </View>
     </SafeAreaView>
   );
