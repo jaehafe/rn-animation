@@ -11,8 +11,11 @@ import {NavigationContainer} from '@react-navigation/native';
 import 'react-native-gesture-handler';
 import {createStackNavigator} from '@react-navigation/stack';
 import {animationNavigation} from './src/constants/navigation';
+import Main from './src/screens/MainScreen';
+import MainScreen from './src/screens/MainScreen';
 
 export type AnimationStackParamList = {
+  [animationNavigation.MAIN_SCREEN]: undefined;
   [animationNavigation.ANIMATION_1]: undefined;
   [animationNavigation.ANIMATION_2]: undefined;
   [animationNavigation.ANIMATION_3]: undefined;
@@ -25,6 +28,12 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name="Main_screen"
+          component={MainScreen}
+          options={{title: 'Main Screen'}}
+        />
+
         <Stack.Screen
           name={animationNavigation.ANIMATION_1}
           component={AnimatedComponents}
