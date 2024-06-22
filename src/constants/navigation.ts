@@ -9,6 +9,9 @@ const animationNavigation = {
   DROPDOWN: 'Dropdown',
   DARK_MODE_SWITCH_SCREEN: 'DarkModeSwitchScreen',
   SHARED_ELEMENT: 'SharedElement',
+
+  // chapter3
+  SNACK_BAR: 'SnackBar',
 } as const;
 
 export {animationNavigation};

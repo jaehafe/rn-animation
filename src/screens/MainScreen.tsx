@@ -1,4 +1,5 @@
 import {
+  Dimensions,
   FlatList,
   SafeAreaView,
   StyleSheet,
@@ -15,6 +16,11 @@ import {StackNavigationProp} from '@react-navigation/stack';
 //   StackScreenProps<FeedStackParamList, typeof feedNavigation.FEED_DETAIL>,
 //   DrawerScreenProps<MainDrawerParamList>
 // >;
+
+const screenWidth = Dimensions.get('window').width;
+const numColumns = 3;
+const boxMargin = 8;
+const boxWidth = (screenWidth - boxMargin * (numColumns + 1)) / numColumns;
 
 type MainScreenProps = {
   navigation: StackNavigationProp<AnimationStackParamList>;
@@ -37,6 +43,11 @@ export default function MainScreen({navigation}: MainScreenProps) {
       key: animationNavigation.DARK_MODE_SWITCH_SCREEN,
       title: 'Dark Mode Switch Screen',
     },
+    //chapter3
+    {
+      key: animationNavigation.SNACK_BAR,
+      title: 'SnackBar',
+    },
   ];
 
   const renderItem = ({
@@ -57,6 +68,9 @@ export default function MainScreen({navigation}: MainScreenProps) {
         data={data}
         renderItem={renderItem}
         keyExtractor={item => item.key}
+        // contentContainerStyle={{flexDirection: 'row', flexWrap: 'wrap'}}
+        numColumns={3}
+        contentContainerStyle={styles.container}
       />
     </SafeAreaView>
   );
@@ -65,15 +79,17 @@ export default function MainScreen({navigation}: MainScreenProps) {
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    flexDirection: 'row',
+  },
+  container: {
+    paddingHorizontal: boxMargin,
   },
   box: {
-    width: 100,
-    height: 100,
+    width: boxWidth,
+    height: boxWidth,
     backgroundColor: 'lightblue',
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 8,
+    margin: boxMargin / 2,
   },
   boxText: {
     fontSize: 16,
