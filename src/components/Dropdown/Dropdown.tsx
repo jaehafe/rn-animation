@@ -19,9 +19,6 @@ export default function Dropdown() {
     <View style={styles.container}>
       <StatusBar barStyle={'light-content'} />
       <DropdownList header={header} options={options} />
-      {/* <View>
-        <Text>123</Text>
-      </View> */}
     </View>
   );
 }
