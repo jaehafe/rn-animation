@@ -10,6 +10,7 @@ const Setting = () => {
   const colorScheme = useColorScheme();
   const insets = useSafeAreaInsets();
   const bottomSheetRef = useRef<BottomSheetMethods>(null);
+  console.log('bottomSheetRef>>', bottomSheetRef);
 
   const [theme, setTheme] = useState<string | null | undefined>(colorScheme);
   const [themeSwitch, setThemeSwitch] = useState<string>('system');

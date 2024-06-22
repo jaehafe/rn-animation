@@ -1,4 +1,4 @@
-import {StyleSheet, useWindowDimensions} from 'react-native';
+import {LayoutRectangle, StyleSheet, useWindowDimensions} from 'react-native';
 import React, {
   forwardRef,
   useCallback,
@@ -37,6 +37,8 @@ const BottomSheet = forwardRef<BottomSheetMethods, Props>(
     const OPEN = 0;
     const CLOSE = bottomSheetHeight + insets.bottom;
     const translateY = useSharedValue(CLOSE);
+
+    console.log('insets>>', insets);
 
     const expand = useCallback(() => {
       translateY.value = withTiming(OPEN);
@@ -109,6 +111,14 @@ const BottomSheet = forwardRef<BottomSheetMethods, Props>(
         }
       });
 
+    const handleViewLayout = (nativeEvent: {layout: LayoutRectangle}) => {
+      const {height} = nativeEvent.layout;
+      if (height) {
+        setBottomSheetHeight(height);
+        translateY.value = withTiming(height + insets.bottom);
+      }
+    };
+
     return (
       <>
         <BackDrop
@@ -128,13 +138,7 @@ const BottomSheet = forwardRef<BottomSheetMethods, Props>(
               animationStyle,
               backgroundColorAnimation,
             ]}
-            onLayout={({nativeEvent}) => {
-              const {height} = nativeEvent.layout;
-              if (height) {
-                setBottomSheetHeight(height);
-                translateY.value = withTiming(height + insets.bottom);
-              }
-            }}>
+            onLayout={({nativeEvent}) => handleViewLayout(nativeEvent)}>
             <Animated.View style={[styles.line, lineColorAnimation]} />
             <Icon theme={theme} />
             <Animated.Text style={[styles.textTitle, textColorAnimation]}>
