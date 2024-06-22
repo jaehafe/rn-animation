@@ -1,8 +1,8 @@
 import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {animationNavigation} from '../constants/navigation';
-import {NavigationProp} from '@react-navigation/native';
 import {AnimationStackParamList} from '../../App';
+import {StackNavigationProp} from '@react-navigation/stack';
 
 // type FeedDetailScreenProps = CompositeScreenProps<
 //   StackScreenProps<FeedStackParamList, typeof feedNavigation.FEED_DETAIL>,
@@ -10,7 +10,7 @@ import {AnimationStackParamList} from '../../App';
 // >;
 
 type MainScreenProps = {
-  navigation: NavigationProp<AnimationStackParamList>;
+  navigation: StackNavigationProp<AnimationStackParamList>;
 };
 
 export default function MainScreen({navigation}: MainScreenProps) {
@@ -19,6 +19,8 @@ export default function MainScreen({navigation}: MainScreenProps) {
     {key: animationNavigation.ANIMATION_2, title: 'Second'},
     {key: animationNavigation.ANIMATION_3, title: 'Third'},
     {key: animationNavigation.ANIMATION_4, title: 'Fourth'},
+    {key: animationNavigation.CAROUSEL, title: 'Carousel'},
+    {key: animationNavigation.SKIA_GRADIENT, title: 'Skia Gradient'},
   ];
 
   const renderItem = ({
@@ -34,18 +36,25 @@ export default function MainScreen({navigation}: MainScreenProps) {
   );
 
   return (
-    <FlatList
-      data={data}
-      renderItem={renderItem}
-      keyExtractor={item => item.key}
-      contentContainerStyle={styles.container}
-    />
+    <View style={styles.root}>
+      <FlatList
+        data={data}
+        renderItem={renderItem}
+        keyExtractor={item => item.key}
+        contentContainerStyle={styles.container}
+      />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  root: {
+    flex: 1,
+  },
   container: {
     flex: 1,
+    // flexDirection: 'row',
+    justifyContent: 'center',
   },
   box: {
     width: 100,

@@ -21,6 +21,7 @@ import {
   Gesture,
   GestureDetector,
 } from 'react-native-gesture-handler';
+import {runOnJS} from 'react-native-reanimated';
 
 const {width} = Dimensions.get('screen');
 
@@ -161,7 +162,7 @@ export default function Carousel() {
       if (index === data.length - 1) {
         return;
       }
-      setActiveIndex(index + 1);
+      runOnJS(setActiveIndex)(index + 1);
     });
 
   const rightFling = Gesture.Fling()
@@ -170,7 +171,8 @@ export default function Carousel() {
       if (index === 0) {
         return;
       }
-      setActiveIndex(index - 1);
+      // setActiveIndex(index - 1);
+      runOnJS(setActiveIndex)(index - 1);
     });
 
   return (

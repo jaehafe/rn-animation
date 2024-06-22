@@ -11,8 +11,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import 'react-native-gesture-handler';
 import {createStackNavigator} from '@react-navigation/stack';
 import {animationNavigation} from './src/constants/navigation';
-import Main from './src/screens/MainScreen';
 import MainScreen from './src/screens/MainScreen';
+import {SkiaGradient} from './src/components/SkiaGradient/SkiaGradient';
 
 export type AnimationStackParamList = {
   [animationNavigation.MAIN_SCREEN]: undefined;
@@ -20,6 +20,8 @@ export type AnimationStackParamList = {
   [animationNavigation.ANIMATION_2]: undefined;
   [animationNavigation.ANIMATION_3]: undefined;
   [animationNavigation.ANIMATION_4]: undefined;
+  [animationNavigation.CAROUSEL]: undefined;
+  [animationNavigation.SKIA_GRADIENT]: undefined;
 };
 
 const Stack = createStackNavigator<AnimationStackParamList>();
@@ -70,14 +72,27 @@ export default function App() {
             };
           }}
         />
+        <Stack.Screen
+          name={animationNavigation.CAROUSEL}
+          component={Carousel}
+          options={({navigation}) => {
+            return {
+              title: 'Carousel',
+            };
+          }}
+        />
+        <Stack.Screen
+          name={animationNavigation.SKIA_GRADIENT}
+          component={SkiaGradient}
+          options={({navigation}) => {
+            return {
+              title: 'Skia Gradient',
+            };
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({});
-
-// <SafeAreaView>
-//         {/* <Carousel /> */}
-//         <AnimatedProperty />
-//       </SafeAreaView>
