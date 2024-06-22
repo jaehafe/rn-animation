@@ -13,6 +13,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {animationNavigation} from './src/constants/navigation';
 import MainScreen from './src/screens/MainScreen';
 import {SkiaGradient} from './src/components/SkiaGradient/SkiaGradient';
+import Dropdown from './src/components/Dropdown/Dropdown';
 
 export type AnimationStackParamList = {
   [animationNavigation.MAIN_SCREEN]: undefined;
@@ -22,6 +23,7 @@ export type AnimationStackParamList = {
   [animationNavigation.ANIMATION_4]: undefined;
   [animationNavigation.CAROUSEL]: undefined;
   [animationNavigation.SKIA_GRADIENT]: undefined;
+  [animationNavigation.DROPDOWN]: undefined;
 };
 
 const Stack = createStackNavigator<AnimationStackParamList>();
@@ -87,6 +89,15 @@ export default function App() {
           options={({navigation}) => {
             return {
               title: 'Skia Gradient',
+            };
+          }}
+        />
+        <Stack.Screen
+          name={animationNavigation.DROPDOWN}
+          component={Dropdown}
+          options={({navigation}) => {
+            return {
+              title: 'Dropdown',
             };
           }}
         />

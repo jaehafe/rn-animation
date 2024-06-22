@@ -21,6 +21,7 @@ export default function MainScreen({navigation}: MainScreenProps) {
     {key: animationNavigation.ANIMATION_4, title: 'Fourth'},
     {key: animationNavigation.CAROUSEL, title: 'Carousel'},
     {key: animationNavigation.SKIA_GRADIENT, title: 'Skia Gradient'},
+    {key: animationNavigation.DROPDOWN, title: 'Dropdown'},
   ];
 
   const renderItem = ({

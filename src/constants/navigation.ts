@@ -6,6 +6,7 @@ const animationNavigation = {
   ANIMATION_4: '4',
   CAROUSEL: 'Carousel',
   SKIA_GRADIENT: 'SkiaGradient',
+  DROPDOWN: 'Dropdown',
 } as const;
 
 export {animationNavigation};
