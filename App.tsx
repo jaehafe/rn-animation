@@ -14,6 +14,7 @@ import {animationNavigation} from './src/constants/navigation';
 import MainScreen from './src/screens/MainScreen';
 import {SkiaGradient} from './src/components/SkiaGradient/SkiaGradient';
 import Dropdown from './src/components/Dropdown/Dropdown';
+import DarkModeSwitchScreen from './src/screens/DarkModeSwitchScreen';
 
 export type AnimationStackParamList = {
   [animationNavigation.MAIN_SCREEN]: undefined;
@@ -24,6 +25,8 @@ export type AnimationStackParamList = {
   [animationNavigation.CAROUSEL]: undefined;
   [animationNavigation.SKIA_GRADIENT]: undefined;
   [animationNavigation.DROPDOWN]: undefined;
+  [animationNavigation.DROPDOWN]: undefined;
+  [animationNavigation.DARK_MODE_SWITCH_SCREEN]: undefined;
 };
 
 const Stack = createStackNavigator<AnimationStackParamList>();
@@ -98,6 +101,15 @@ export default function App() {
           options={({navigation}) => {
             return {
               title: 'Dropdown',
+            };
+          }}
+        />
+        <Stack.Screen
+          name={animationNavigation.DARK_MODE_SWITCH_SCREEN}
+          component={DarkModeSwitchScreen}
+          options={({navigation}) => {
+            return {
+              title: 'Dark Mode Switch Screen',
             };
           }}
         />

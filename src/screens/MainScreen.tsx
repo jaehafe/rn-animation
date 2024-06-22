@@ -22,6 +22,10 @@ export default function MainScreen({navigation}: MainScreenProps) {
     {key: animationNavigation.CAROUSEL, title: 'Carousel'},
     {key: animationNavigation.SKIA_GRADIENT, title: 'Skia Gradient'},
     {key: animationNavigation.DROPDOWN, title: 'Dropdown'},
+    {
+      key: animationNavigation.DARK_MODE_SWITCH_SCREEN,
+      title: 'Dark Mode Switch Screen',
+    },
   ];
 
   const renderItem = ({

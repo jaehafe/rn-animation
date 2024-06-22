@@ -7,6 +7,7 @@ const animationNavigation = {
   CAROUSEL: 'Carousel',
   SKIA_GRADIENT: 'SkiaGradient',
   DROPDOWN: 'Dropdown',
+  DARK_MODE_SWITCH_SCREEN: 'DarkModeSwitchScreen',
 } as const;
 
 export {animationNavigation};
