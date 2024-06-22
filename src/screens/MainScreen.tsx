@@ -1,4 +1,11 @@
-import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {
+  FlatList,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import React from 'react';
 import {animationNavigation} from '../constants/navigation';
 import {AnimationStackParamList} from '../../App';
@@ -17,6 +24,10 @@ export default function MainScreen({navigation}: MainScreenProps) {
   const data = [
     {key: animationNavigation.ANIMATION_1, title: 'First'},
     {key: animationNavigation.ANIMATION_2, title: 'Second'},
+    {
+      key: animationNavigation.SHARED_ELEMENT,
+      title: 'Shared Element',
+    },
     {key: animationNavigation.ANIMATION_3, title: 'Third'},
     {key: animationNavigation.ANIMATION_4, title: 'Fourth'},
     {key: animationNavigation.CAROUSEL, title: 'Carousel'},
@@ -41,25 +52,20 @@ export default function MainScreen({navigation}: MainScreenProps) {
   );
 
   return (
-    <View style={styles.root}>
+    <SafeAreaView style={styles.root}>
       <FlatList
         data={data}
         renderItem={renderItem}
         keyExtractor={item => item.key}
-        contentContainerStyle={styles.container}
       />
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-  },
-  container: {
-    flex: 1,
-    // flexDirection: 'row',
-    justifyContent: 'center',
+    flexDirection: 'row',
   },
   box: {
     width: 100,

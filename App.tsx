@@ -15,6 +15,7 @@ import MainScreen from './src/screens/MainScreen';
 import {SkiaGradient} from './src/components/SkiaGradient/SkiaGradient';
 import Dropdown from './src/components/Dropdown/Dropdown';
 import DarkModeSwitchScreen from './src/screens/DarkModeSwitchScreen';
+import SharedElementNavigator from './src/Shared-Element/src/navigator/SharedElementNavigator';
 
 export type AnimationStackParamList = {
   [animationNavigation.MAIN_SCREEN]: undefined;
@@ -27,6 +28,7 @@ export type AnimationStackParamList = {
   [animationNavigation.DROPDOWN]: undefined;
   [animationNavigation.DROPDOWN]: undefined;
   [animationNavigation.DARK_MODE_SWITCH_SCREEN]: undefined;
+  [animationNavigation.SHARED_ELEMENT]: undefined;
 };
 
 const Stack = createStackNavigator<AnimationStackParamList>();
@@ -110,6 +112,15 @@ export default function App() {
           options={({navigation}) => {
             return {
               title: 'Dark Mode Switch Screen',
+            };
+          }}
+        />
+        <Stack.Screen
+          name={animationNavigation.SHARED_ELEMENT}
+          component={SharedElementNavigator}
+          options={({navigation}) => {
+            return {
+              title: 'Shared Element',
             };
           }}
         />

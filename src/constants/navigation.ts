@@ -8,6 +8,7 @@ const animationNavigation = {
   SKIA_GRADIENT: 'SkiaGradient',
   DROPDOWN: 'Dropdown',
   DARK_MODE_SWITCH_SCREEN: 'DarkModeSwitchScreen',
+  SHARED_ELEMENT: 'SharedElement',
 } as const;
 
 export {animationNavigation};
