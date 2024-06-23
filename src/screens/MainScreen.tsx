@@ -53,6 +53,11 @@ export default function MainScreen({navigation}: MainScreenProps) {
       key: animationNavigation.GESTURE_HANDLER,
       title: 'Gesture Handler',
     },
+    //floating action button
+    {
+      key: animationNavigation.FLOATING_ACTION_BUTTON,
+      title: 'Floating Action Button',
+    },
   ];
 
   const renderItem = ({

@@ -15,6 +15,9 @@ const animationNavigation = {
 
   // gesture handler
   GESTURE_HANDLER: 'GestureHandler',
+
+  //floating action button
+  FLOATING_ACTION_BUTTON: 'FloatingActionButton',
 } as const;
 
 export {animationNavigation};

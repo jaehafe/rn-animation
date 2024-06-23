@@ -18,6 +18,7 @@ import DarkModeSwitchScreen from './src/DarkModeSwitch/DarkModeSwitchScreen';
 import SharedElementNavigator from './src/Shared-Element/src/navigator/SharedElementNavigator';
 import SnackBar from './src/chapter3/SnackBar';
 import GestureHandler from './src/GestureHandler';
+import FloatingActionButtonScreen from './src/FloatingActionButton';
 
 export type AnimationStackParamList = {
   [animationNavigation.MAIN_SCREEN]: undefined;
@@ -36,6 +37,7 @@ export type AnimationStackParamList = {
   [animationNavigation.SNACK_BAR]: undefined;
   // gesture handler
   [animationNavigation.GESTURE_HANDLER]: undefined;
+  [animationNavigation.FLOATING_ACTION_BUTTON]: undefined;
 };
 
 const Stack = createStackNavigator<AnimationStackParamList>();
@@ -146,6 +148,16 @@ export default function App() {
           options={({navigation}) => {
             return {
               title: 'Gesture Handler',
+              headerShown: false,
+            };
+          }}
+        />
+        <Stack.Screen
+          name={animationNavigation.FLOATING_ACTION_BUTTON}
+          component={FloatingActionButtonScreen}
+          options={({navigation}) => {
+            return {
+              title: 'Floating Action Button',
             };
           }}
         />
