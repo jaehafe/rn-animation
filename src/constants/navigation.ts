@@ -12,6 +12,7 @@ const animationNavigation = {
 
   // chapter3
   SNACK_BAR: 'SnackBar',
+  COLLAPSIBLE: 'Collapsible',
 
   // gesture handler
   GESTURE_HANDLER: 'GestureHandler',

@@ -19,6 +19,7 @@ import SharedElementNavigator from './src/Shared-Element/src/navigator/SharedEle
 import SnackBar from './src/chapter3/SnackBar';
 import GestureHandler from './src/GestureHandler';
 import FloatingActionButtonScreen from './src/FloatingActionButton';
+import Collapsible from './src/chapter3/Collapsible/Collapsible';
 
 export type AnimationStackParamList = {
   [animationNavigation.MAIN_SCREEN]: undefined;
@@ -35,6 +36,7 @@ export type AnimationStackParamList = {
 
   // chapter3
   [animationNavigation.SNACK_BAR]: undefined;
+  [animationNavigation.COLLAPSIBLE]: undefined;
   // gesture handler
   [animationNavigation.GESTURE_HANDLER]: undefined;
   [animationNavigation.FLOATING_ACTION_BUTTON]: undefined;
@@ -158,6 +160,15 @@ export default function App() {
           options={({navigation}) => {
             return {
               title: 'Floating Action Button',
+            };
+          }}
+        />
+        <Stack.Screen
+          name={animationNavigation.COLLAPSIBLE}
+          component={Collapsible}
+          options={({navigation}) => {
+            return {
+              title: 'Collapsible',
             };
           }}
         />

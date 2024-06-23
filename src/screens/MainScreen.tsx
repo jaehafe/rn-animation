@@ -44,15 +44,10 @@ export default function MainScreen({navigation}: MainScreenProps) {
       title: 'Dark Mode Switch Screen',
     },
     //chapter3
-    {
-      key: animationNavigation.SNACK_BAR,
-      title: 'SnackBar',
-    },
+    {key: animationNavigation.SNACK_BAR, title: 'SnackBar'},
+    {key: animationNavigation.COLLAPSIBLE, title: 'Collapsible'},
     // gesture handler
-    {
-      key: animationNavigation.GESTURE_HANDLER,
-      title: 'Gesture Handler',
-    },
+    {key: animationNavigation.GESTURE_HANDLER, title: 'Gesture Handler'},
     //floating action button
     {
       key: animationNavigation.FLOATING_ACTION_BUTTON,
