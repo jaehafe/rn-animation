@@ -1,7 +1,7 @@
 import React from 'react';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import Setting from '../DarkModeSwitch/screens/Setting';
+import Setting from './screens/Setting';
 
 const DarkModeSwitchScreen = () => {
   return (

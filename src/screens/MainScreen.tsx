@@ -48,6 +48,11 @@ export default function MainScreen({navigation}: MainScreenProps) {
       key: animationNavigation.SNACK_BAR,
       title: 'SnackBar',
     },
+    // gesture handler
+    {
+      key: animationNavigation.GESTURE_HANDLER,
+      title: 'Gesture Handler',
+    },
   ];
 
   const renderItem = ({
@@ -57,7 +62,8 @@ export default function MainScreen({navigation}: MainScreenProps) {
   }) => (
     <TouchableOpacity
       style={styles.box}
-      onPress={() => navigation.navigate(item.key)}>
+      onPress={() => navigation.navigate(item.key)}
+    >
       <Text style={styles.boxText}>{item.title}</Text>
     </TouchableOpacity>
   );
@@ -93,6 +99,5 @@ const styles = StyleSheet.create({
   },
   boxText: {
     fontSize: 16,
-    color: 'white',
   },
 });

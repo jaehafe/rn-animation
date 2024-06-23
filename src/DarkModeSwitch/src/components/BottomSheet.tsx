@@ -138,7 +138,8 @@ const BottomSheet = forwardRef<BottomSheetMethods, Props>(
               animationStyle,
               backgroundColorAnimation,
             ]}
-            onLayout={({nativeEvent}) => handleViewLayout(nativeEvent)}>
+            onLayout={({nativeEvent}) => handleViewLayout(nativeEvent)}
+          >
             <Animated.View style={[styles.line, lineColorAnimation]} />
             <Icon theme={theme} />
             <Animated.Text style={[styles.textTitle, textColorAnimation]}>

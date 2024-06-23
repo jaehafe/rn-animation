@@ -15,9 +15,7 @@ import React from 'react';
 
 import {
   GestureHandlerRootView,
-  FlingGestureHandler,
   Directions,
-  State,
   Gesture,
   GestureDetector,
 } from 'react-native-gesture-handler';
@@ -238,7 +236,8 @@ export default function Carousel() {
                         },
                         {scale},
                       ],
-                    }}>
+                    }}
+                  >
                     <Image
                       source={{uri: item.poster}}
                       style={{
@@ -290,15 +289,3 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
 });
-
-// <GestureHandlerRootView style={{flex: 1}}>
-//   <SafeAreaView
-//     style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-//     <View>
-//       {/* <AnimatedComponents /> */}
-//       {/* <AnimatedValue /> */}
-//       {/* <AnimatedTiming /> */}
-//       <AnimatedProperty />
-//     </View>
-//   </SafeAreaView>
-// </GestureHandlerRootView>

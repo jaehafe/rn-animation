@@ -62,6 +62,23 @@ const Switch = ({setTheme, theme, setThemeSwitch, themeSwitch}: Props) => {
     };
   });
 
+  const handlePressSystem = () => {
+    setThemeSwitch('system');
+    if (colorScheme) {
+      setTheme(colorScheme);
+    }
+  };
+
+  const handlePressLight = () => {
+    setThemeSwitch('light');
+    setTheme('light');
+  };
+
+  const handlePressDark = () => {
+    setThemeSwitch('dark');
+    setTheme('dark');
+  };
+
   return (
     <Animated.View
       style={[
@@ -70,7 +87,8 @@ const Switch = ({setTheme, theme, setThemeSwitch, themeSwitch}: Props) => {
           width: SWITCH_CONTAINER_WIDTH,
         },
         backgroundColorAnimation,
-      ]}>
+      ]}
+    >
       <Animated.View
         style={[
           styles.slideContainer,
@@ -78,7 +96,8 @@ const Switch = ({setTheme, theme, setThemeSwitch, themeSwitch}: Props) => {
             width: SWITCH_WIDTH,
           },
           translateAnimation,
-        ]}>
+        ]}
+      >
         <Animated.View
           style={[
             styles.slide,
@@ -89,34 +108,17 @@ const Switch = ({setTheme, theme, setThemeSwitch, themeSwitch}: Props) => {
           ]}
         />
       </Animated.View>
-      <Pressable
-        style={styles.button}
-        onPress={() => {
-          setThemeSwitch('system');
-          if (colorScheme) {
-            setTheme(colorScheme);
-          }
-        }}>
+      <Pressable style={styles.button} onPress={handlePressSystem}>
         <Animated.Text style={[styles.textButton, textColorAnimation]}>
           System
         </Animated.Text>
       </Pressable>
-      <Pressable
-        style={styles.button}
-        onPress={() => {
-          setThemeSwitch('light');
-          setTheme('light');
-        }}>
+      <Pressable style={styles.button} onPress={handlePressLight}>
         <Animated.Text style={[styles.textButton, textColorAnimation]}>
           Light
         </Animated.Text>
       </Pressable>
-      <Pressable
-        style={styles.button}
-        onPress={() => {
-          setThemeSwitch('dark');
-          setTheme('dark');
-        }}>
+      <Pressable style={styles.button} onPress={handlePressDark}>
         <Animated.Text style={[styles.textButton, textColorAnimation]}>
           Dark
         </Animated.Text>

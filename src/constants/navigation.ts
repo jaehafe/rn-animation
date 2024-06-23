@@ -12,6 +12,9 @@ const animationNavigation = {
 
   // chapter3
   SNACK_BAR: 'SnackBar',
+
+  // gesture handler
+  GESTURE_HANDLER: 'GestureHandler',
 } as const;
 
 export {animationNavigation};

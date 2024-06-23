@@ -14,9 +14,10 @@ import {animationNavigation} from './src/constants/navigation';
 import MainScreen from './src/screens/MainScreen';
 import {SkiaGradient} from './src/components/SkiaGradient/SkiaGradient';
 import Dropdown from './src/components/Dropdown/Dropdown';
-import DarkModeSwitchScreen from './src/screens/DarkModeSwitchScreen';
+import DarkModeSwitchScreen from './src/DarkModeSwitch/DarkModeSwitchScreen';
 import SharedElementNavigator from './src/Shared-Element/src/navigator/SharedElementNavigator';
 import SnackBar from './src/chapter3/SnackBar';
+import GestureHandler from './src/GestureHandler';
 
 export type AnimationStackParamList = {
   [animationNavigation.MAIN_SCREEN]: undefined;
@@ -33,6 +34,8 @@ export type AnimationStackParamList = {
 
   // chapter3
   [animationNavigation.SNACK_BAR]: undefined;
+  // gesture handler
+  [animationNavigation.GESTURE_HANDLER]: undefined;
 };
 
 const Stack = createStackNavigator<AnimationStackParamList>();
@@ -134,6 +137,15 @@ export default function App() {
           options={({navigation}) => {
             return {
               title: 'SnackBar',
+            };
+          }}
+        />
+        <Stack.Screen
+          name={animationNavigation.GESTURE_HANDLER}
+          component={GestureHandler}
+          options={({navigation}) => {
+            return {
+              title: 'Gesture Handler',
             };
           }}
         />
