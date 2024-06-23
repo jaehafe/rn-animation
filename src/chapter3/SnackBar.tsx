@@ -8,6 +8,7 @@ import {
   View,
 } from 'react-native';
 import React, {useRef} from 'react';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export default function SnackBar() {
   const translationYAnim = useRef(new Animated.Value(100)).current;
@@ -40,9 +41,11 @@ export default function SnackBar() {
           {
             transform: [{translateY: translationYAnim}],
           },
-        ]}>
+        ]}
+      >
         <View style={styles.snackbarWrapper}>
-          <Text style={styles.whiteText}>Icon</Text>
+          {/* <Text style={styles.whiteText}>Icon</Text> */}
+          <Icon name="checkmark-circle" color={'white'} size={24} />
           <Text style={styles.message}>Message</Text>
         </View>
       </Animated.View>
