@@ -19,6 +19,11 @@ const animationNavigation = {
 
   //floating action button
   FLOATING_ACTION_BUTTON: 'FloatingActionButton',
+
+  // circular progress
+  CIRCULAR_PROGRESS: 'CircularProgress',
+  SKIA: 'Skia',
+  MODAL: 'Modal',
 } as const;
 
 export {animationNavigation};

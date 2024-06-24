@@ -53,6 +53,18 @@ export default function MainScreen({navigation}: MainScreenProps) {
       key: animationNavigation.FLOATING_ACTION_BUTTON,
       title: 'Floating Action Button',
     },
+    {
+      key: animationNavigation.CIRCULAR_PROGRESS,
+      title: 'Circular Progress',
+    },
+    {
+      key: animationNavigation.SKIA,
+      title: 'Skia',
+    },
+    {
+      key: animationNavigation.MODAL,
+      title: 'Modal',
+    },
   ];
 
   const renderItem = ({
