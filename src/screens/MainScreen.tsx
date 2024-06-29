@@ -66,6 +66,10 @@ export default function MainScreen({navigation}: MainScreenProps) {
       title: 'Panresponder',
     },
     {
+      key: animationNavigation.PANRESPONDER_BALL,
+      title: 'PanresponderBall',
+    },
+    {
       key: animationNavigation.MODAL,
       title: 'Modal',
     },

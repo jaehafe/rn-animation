@@ -26,6 +26,7 @@ import ModalComponent from './src/Modal';
 import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import PanResponderScreen from './src/chapter6/PanResponderScreen';
+import PanResponderBallScreen from './src/chapter6/PanResponderBallScreen';
 
 export type AnimationStackParamList = {
   [animationNavigation.MAIN_SCREEN]: undefined;
@@ -50,6 +51,7 @@ export type AnimationStackParamList = {
   [animationNavigation.SKIA]: undefined;
   [animationNavigation.MODAL]: undefined;
   [animationNavigation.PANRESPONDER]: undefined;
+  [animationNavigation.PANRESPONDER_BALL]: undefined;
 };
 
 const Stack = createStackNavigator<AnimationStackParamList>();
@@ -211,6 +213,16 @@ export default function App() {
               options={({navigation}) => {
                 return {
                   title: 'PanResponder',
+                  headerShown: false,
+                };
+              }}
+            />
+            <Stack.Screen
+              name={animationNavigation.PANRESPONDER_BALL}
+              component={PanResponderBallScreen}
+              options={({navigation}) => {
+                return {
+                  title: 'PanResponder Ball',
                   headerShown: false,
                 };
               }}
