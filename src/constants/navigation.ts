@@ -24,7 +24,8 @@ const animationNavigation = {
   CIRCULAR_PROGRESS: 'CircularProgress',
   SKIA: 'Skia',
   PANRESPONDER: 'Panresponder',
-  PANRESPONDER_BALL: 'PanresponderBall',
+  PANRESPONDER_BALL: 'PanResponderBall',
+  PANRESPONDER_MODAL: 'PanResponderModal',
   MODAL: 'Modal',
 } as const;
 
