@@ -62,6 +62,10 @@ export default function MainScreen({navigation}: MainScreenProps) {
       title: 'Skia',
     },
     {
+      key: animationNavigation.PANRESPONDER,
+      title: 'Panresponder',
+    },
+    {
       key: animationNavigation.MODAL,
       title: 'Modal',
     },

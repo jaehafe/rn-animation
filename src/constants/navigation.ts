@@ -23,6 +23,7 @@ const animationNavigation = {
   // circular progress
   CIRCULAR_PROGRESS: 'CircularProgress',
   SKIA: 'Skia',
+  PANRESPONDER: 'Panresponder',
   MODAL: 'Modal',
 } as const;
 

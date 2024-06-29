@@ -25,6 +25,7 @@ import SKiaComponent from './src/skia';
 import ModalComponent from './src/Modal';
 import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import PanResponderScreen from './src/chapter6/PanResponderScreen';
 
 export type AnimationStackParamList = {
   [animationNavigation.MAIN_SCREEN]: undefined;
@@ -48,6 +49,7 @@ export type AnimationStackParamList = {
   [animationNavigation.CIRCULAR_PROGRESS]: undefined;
   [animationNavigation.SKIA]: undefined;
   [animationNavigation.MODAL]: undefined;
+  [animationNavigation.PANRESPONDER]: undefined;
 };
 
 const Stack = createStackNavigator<AnimationStackParamList>();
@@ -199,6 +201,16 @@ export default function App() {
               options={({navigation}) => {
                 return {
                   title: 'Skia',
+                  headerShown: false,
+                };
+              }}
+            />
+            <Stack.Screen
+              name={animationNavigation.PANRESPONDER}
+              component={PanResponderScreen}
+              options={({navigation}) => {
+                return {
+                  title: 'PanResponder',
                   headerShown: false,
                 };
               }}
