@@ -28,6 +28,7 @@ import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import PanResponderScreen from './src/chapter6/PanResponderScreen';
 import PanResponderBallScreen from './src/chapter6/PanResponderBallScreen';
 import PanResponderModal from './src/chapter6/PanResponderModal';
+import PanResponderBannerSlider from './src/chapter6/PanResponderBannerSlider';
 
 export type AnimationStackParamList = {
   [animationNavigation.MAIN_SCREEN]: undefined;
@@ -53,6 +54,7 @@ export type AnimationStackParamList = {
   [animationNavigation.MODAL]: undefined;
   [animationNavigation.PANRESPONDER]: undefined;
   [animationNavigation.PANRESPONDER_BALL]: undefined;
+  [animationNavigation.PANRESPONDER_BANNER_SLIDER]: undefined;
   [animationNavigation.PANRESPONDER_MODAL]: undefined;
 };
 
@@ -236,6 +238,15 @@ export default function App() {
                 return {
                   title: 'PanResponder Ball',
                   headerShown: false,
+                };
+              }}
+            />
+            <Stack.Screen
+              name={animationNavigation.PANRESPONDER_BANNER_SLIDER}
+              component={PanResponderBannerSlider}
+              options={({navigation}) => {
+                return {
+                  title: 'PanResponder Banner Slider',
                 };
               }}
             />

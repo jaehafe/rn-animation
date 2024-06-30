@@ -74,6 +74,10 @@ export default function MainScreen({navigation}: MainScreenProps) {
       title: 'PanResponderModal',
     },
     {
+      key: animationNavigation.PANRESPONDER_BANNER_SLIDER,
+      title: 'PanResponderBannerSlider',
+    },
+    {
       key: animationNavigation.MODAL,
       title: 'Modal',
     },

@@ -26,6 +26,7 @@ const animationNavigation = {
   PANRESPONDER: 'Panresponder',
   PANRESPONDER_BALL: 'PanResponderBall',
   PANRESPONDER_MODAL: 'PanResponderModal',
+  PANRESPONDER_BANNER_SLIDER: 'PanResponderBannerSlider',
   MODAL: 'Modal',
 } as const;
 
